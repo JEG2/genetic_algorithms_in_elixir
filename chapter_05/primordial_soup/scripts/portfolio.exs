@@ -1,4 +1,4 @@
-defmodule Speller do
+defmodule Portfolio do
   alias PrimordialSoup.Chromosome
   alias PrimordialSoup.GeneticLine
 
@@ -7,8 +7,8 @@ defmodule Speller do
   @impl GeneticLine
   def generate do
     genes =
-      Stream.repeatedly(fn -> Enum.random(?a..?z) end)
-      |> Enum.take(34)
+      Stream.repeatedly(fn -> {Enum.random(1..10), Enum.random(1..10)} end)
+      |> Enum.take(10)
 
     Chromosome.new(genes: genes, size: length(genes))
   end
@@ -16,16 +16,16 @@ defmodule Speller do
   @impl GeneticLine
   def score_fitness(chromosome) do
     chromosome.genes
-    |> List.to_string()
-    |> String.jaro_distance("supercalifragilisticexpialidocious")
+    |> Enum.map(fn {roi, risk} -> 2 * roi - risk end)
+    |> Enum.sum()
   end
 
   @impl GeneticLine
-  def terminate?([best | _rest]) do
-    best.fitness == 1
+  def terminate?([best | _rest], _generation) do
+    best.fitness > 180
   end
 end
 
-Speller
-|> PrimordialSoup.evolve(population_size: 10_000, show_progress: true)
+Portfolio
+|> PrimordialSoup.evolve(show_progress: true)
 |> IO.inspect()

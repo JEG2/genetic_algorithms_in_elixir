@@ -21,11 +21,11 @@ defmodule Speller do
   end
 
   @impl GeneticLine
-  def terminate?([best | _rest]) do
+  def terminate?([best | _rest], _generation) do
     best.fitness == 1
   end
 end
 
 Speller
-|> PrimordialSoup.evolve(population_size: 10_000, show_progress: true)
+|> PrimordialSoup.evolve(show_progress: true, selection_type: :tournament)
 |> IO.inspect()
