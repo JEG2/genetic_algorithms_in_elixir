@@ -30,6 +30,13 @@ defmodule PrimordialSoup do
     whole_arithmetic_alpha: 0.2
   ]
 
+  @on_load :load_nif
+  def load_nif do
+    :erlang.load_nif(~c[./primordial], 0)
+  end
+
+  def xor96, do: raise("NIF xor96/0 not implemented.")
+
   def evolve(genetic_line, options \\ []) do
     options = Keyword.merge(@default_options, options)
 

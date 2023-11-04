@@ -2,7 +2,7 @@ defmodule PrimordialSoup.Crossover do
   alias PrimordialSoup.Chromosome
 
   def single_point(p1, p2, _options) do
-    cx_point = :rand.uniform(p1.size - 1)
+    cx_point = rem(PrimordialSoup.xor96(), p1.size - 1)
     {h1, t1} = Enum.split(p1.genes, cx_point)
     {h2, t2} = Enum.split(p2.genes, cx_point)
 
