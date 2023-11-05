@@ -16,4 +16,4 @@ static ErlNifFunc nif_funcs[] = {
   {"xor96", 0, xor96}
 };
 
-ERL_NIF_INIT(Elixir.PrimordialSoup, nif_funcs, NULL, NULL, NULL, NULL);
+ERL_NIF_INIT(Elixir.Genetic, nif_funcs, NULL, NULL, NULL, NULL);

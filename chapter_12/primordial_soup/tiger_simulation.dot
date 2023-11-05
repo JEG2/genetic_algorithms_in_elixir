@@ -1,0 +1,12 @@
+strict digraph {
+    48970210[label="%PrimordialSoup.Chromosome{id: -576460752303422655, genes: [0, 0, 1, 0, 0, 0, 0, 0], size: 8, fitness: nil, age: 0}"]
+    673351994[label="%PrimordialSoup.Chromosome{id: -576460752303422655, genes: [0, 0, 1, 0, 0, 0, 0, 0], size: 8, fitness: -2.0, age: 1}"]
+    841977307[label="%PrimordialSoup.Chromosome{id: -576460752303422719, genes: [1, 0, 0, 0, 0, 1, 1, 0], size: 8, fitness: 4.0, age: 1}"]
+    1989372946[label="%PrimordialSoup.Chromosome{id: -576460752303422719, genes: [1, 0, 0, 0, 0, 1, 1, 0], size: 8, fitness: nil, age: 0}"]
+    4065830221[label="%PrimordialSoup.Chromosome{id: -576460752303422719, genes: [1, 0, 0, 0, 0, 1, 1, 0], size: 8, fitness: 4.0, age: 0}"]
+    4218558756[label="%PrimordialSoup.Chromosome{id: -576460752303422655, genes: [0, 0, 1, 0, 0, 0, 0, 0], size: 8, fitness: -2.0, age: 0}"]
+    4065830221 -> 673351994 [weight=1]
+    4065830221 -> 841977307 [weight=1]
+    4218558756 -> 673351994 [weight=1]
+    4218558756 -> 841977307 [weight=1]
+}
